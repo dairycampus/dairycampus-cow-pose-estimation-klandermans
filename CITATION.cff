@@ -1,30 +1,41 @@
 cff-version: 1.2.0
-message: "If you use this software or the models, please cite both the paper and this repository."
+message: "If you use this software, models, or dataset, please cite this repository and the associated publication."
+title: "Dairy Campus - Bovine Pose Estimation Dataset & Codebase"
 authors:
-  - family-names: Bekhit
-    given-names: Rodania
-    affiliation: "Animal Health & Welfare, Wageningen Livestock Research, Wageningen University & Research"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
   - family-names: Klandermans
     given-names: Bert
     affiliation: "Animal Breeding and Genomics, Wageningen Livestock Research, Wageningen University & Research"
   - family-names: Kamphuis
     given-names: Claudia
     affiliation: "Animal Breeding and Genomics, Wageningen Livestock Research, Wageningen University & Research"
-title: "Dairy Cow Pose Estimation and Posture Transition Recognition Pipeline"
+  - family-names: Taghavi
+    given-names: Marjaneh
+    affiliation: "Wageningen Livestock Research, Wageningen University & Research"
+  - family-names: Ouweltjes
+    given-names: Wijbrand
+    affiliation: "Wageningen Livestock Research, Wageningen University & Research"
+  - family-names: Bekhit
+    given-names: Rodania
+    affiliation: "Animal Health & Welfare, Wageningen Livestock Research, Wageningen University & Research"
 version: 1.0.0
-doi: 10.5281/zenodo.placeholder
-date-released: 2026-11-05
-url: "https://github.com/WUR-Livestock-Research/dairy-cow-pose-estimation"
+doi: "10.5281/zenodo.23931569"
+date-released: 2026-11-03
+url: "https://doi.org/10.5281/zenodo.23931569"
+repository-code: "https://github.com/klandermans/dairy-cow-pose-estimation"
+license: "CC-BY-4.0"
 preferred-citation:
-  type: article
+  type: data
   authors:
-    - family-names: Bekhit
-      given-names: Rodania
     - family-names: Klandermans
       given-names: Bert
     - family-names: Kamphuis
       given-names: Claudia
-  journal: "Computers and Electronics in Agriculture"
-  title: "Recognition and Temporal Localisation of Lying-Down and Standing-Up Transitions in Dairy Cows Using 2D and 3D Skeletal Representations"
+    - family-names: Taghavi
+      given-names: Marjaneh
+    - family-names: Ouweltjes
+      given-names: Wijbrand
+  title: "Dairy Campus - Bovine Pose Estimation Dataset"
   year: 2026
+  publisher: "Zenodo"
+  doi: "10.5281/zenodo.23931569"
+  url: "https://edepot.wur.nl/654349"
