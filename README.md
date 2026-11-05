@@ -118,6 +118,9 @@ All evaluations were conducted using the official MS-COCO keypoint evaluator and
 3. **High Generalization on Combined Dataset:**  
    Evaluated across all 320 images (2,525 cows across cubicles, walking passages, and drinking areas), the final model reaches **81.32% mAP** and **99.21% PCK@0.05**, confirming robust localization across varied lighting, body postures, and pen locations.
 
+> **Model Weights Availability:**  
+> In accordance with institutional research and intellectual property guidelines, raw neural network weights (`.pth` checkpoints) are retained by Wageningen Livestock Research and are not distributed within this repository. Researchers can reproduce the exact weights directly from the dataset using the provided Slurm training scripts or request access for non-commercial academic evaluation from the authors.
+
 ---
 
 ## 🖼️ Test Images & Visual Inference Demo
