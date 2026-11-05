@@ -44,6 +44,10 @@ env/
 
 # IDE & OS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+__MACOSX/
 .idea/
 .vscode/
 *.swp
