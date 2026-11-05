@@ -81,6 +81,11 @@ All evaluations were executed on the WUR Anunna HPC cluster (`gpun203`) using bo
 | 📄 **WLR Historical Reference** | `bs=2, lr=0.0005, ep180` | **All (320 imgs)** | **81.14%** | 87.09% | 85.83% | 82.23% | 99.14% | 99.68% | 99.85% |
 
 ### Scientific Verdict: $H_1$ is Empirically Confirmed
+
+<p align="center">
+  <img src="assets/plots/figure2_pck_fingerprint_match.png" width="750" alt="PCK Metric Fingerprint Match" />
+</p>
+
 * **PCK Accuracy Fingerprint:**  
   The measured Percentage of Correct Keypoints on the 20-image validation split:
   * **PCK@0.05:** **90.67%** (Historical WLR reference: **90.2%**)
@@ -99,12 +104,20 @@ The verification experiments were conducted on the **Anunna High Performance Com
 * **Software Modules:** `2023`, `slurm`, `Python/3.11.3-GCCcore-12.3.0`, `CUDA/12.1.1`, `PyTorch 2.1.2+cu121`, `MMPose 1.3.1`.
 * **Training Convergence:** Multi-step learning rate decay ($5\cdot 10^{-4} \rightarrow 5\cdot 10^{-5} \rightarrow 5\cdot 10^{-6}$ at epochs 170 and 200), reaching a final loss of `loss_kpt = 0.000124` and 100% pose accuracy.
 
+<p align="center">
+  <img src="assets/plots/figure1_training_convergence.png" width="850" alt="HPC Training Convergence Curve" />
+</p>
+
 > **Model Weights Availability:**  
 > In accordance with institutional data policies, raw model weights (`.pth` files) are retained by Wageningen Livestock Research and are not hosted in this repository. Researchers can reproduce the exact weights directly from the dataset using the provided Slurm training scripts or contact the author for academic verification.
 
 ---
 
 ## 🖼️ Sample Validation Images
+
+<p align="center">
+  <img src="assets/plots/figure3_sample_pose_visualization.jpg" width="850" alt="Sample Top-View Bovine Pose Estimation" />
+</p>
 
 Three sample validation images from Dairy Campus are provided in [`assets/sample_images/`](assets/sample_images/):
 * `219_2023-03-02_09-00-03_21057.jpg` (Location 1: Drinker lane)

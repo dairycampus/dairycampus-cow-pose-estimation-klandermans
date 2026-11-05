@@ -22,6 +22,8 @@ models/
 *.png
 !assets/sample_images/*.jpg
 !assets/sample_images/*.png
+!assets/plots/*.png
+!assets/plots/*.jpg
 data/
 datasets/
 coco_kpt_*/
