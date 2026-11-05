@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this empirical verification study or code, please cite it using the metadata below."
-title: "Data Provenance & Reproducibility Verification of the Wageningen Livestock Research Bovine Pose Estimation Model"
+message: "If you use this reproducibility benchmark or code, please cite it using the metadata below."
+title: "Bovine Pose Estimation — Reproducibility Audit & Data Provenance Benchmark"
 authors:
   - family-names: Klandermans
     given-names: Bert
@@ -14,19 +14,25 @@ repository-code: "https://github.com/dairycampus/dairycampus-cow-pose-estimation
 license: "CC-BY-4.0"
 keywords:
   - "data provenance"
-  - "empirical verification"
-  - "reproducibility study"
+  - "reproducibility audit"
   - "bovine pose estimation"
-  - "deep learning"
   - "HRNet-W48"
   - "MMPose"
   - "Dairy Campus"
+  - "deep learning"
+references:
+  - type: data
+    title: "Bovine Top-Down Barn Keypoint Dataset (300 Train + 20 Val Images)"
+    authors:
+      - name: "Dairy Campus & Wageningen Livestock Research"
+    doi: "10.5281/zenodo.23931569"
+    url: "https://doi.org/10.5281/zenodo.23931569"
 preferred-citation:
   type: software
   authors:
     - family-names: Klandermans
       given-names: Bert
       orcid: "https://orcid.org/0009-0009-2173-9422"
-  title: "Data Provenance & Reproducibility Verification of the Wageningen Livestock Research Bovine Pose Estimation Model"
+  title: "Bovine Pose Estimation — Reproducibility Audit & Data Provenance Benchmark"
   year: 2026
-  url: "https://github.com/klandermans/dairy-cow-pose-estimation"
+  url: "https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans"
