@@ -9,8 +9,8 @@ authors:
 version: 1.0.0
 doi: "10.5281/zenodo.23931569"
 date-released: 2026-11-05
-url: "https://github.com/klandermans/dairy-cow-pose-estimation"
-repository-code: "https://github.com/klandermans/dairy-cow-pose-estimation"
+url: "https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans"
+repository-code: "https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans"
 license: "CC-BY-4.0"
 keywords:
   - "data provenance"

@@ -84,6 +84,6 @@ python3 scripts/infer_cow_pose.py \
   title        = {{Dairy Cow Pose Estimation — Data Provenance & Benchmark Reproduction}},
   year         = {2026},
   publisher    = {GitHub},
-  url          = {https://github.com/klandermans/dairy-cow-pose-estimation}
+  url          = {https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans}
 }
 ```
