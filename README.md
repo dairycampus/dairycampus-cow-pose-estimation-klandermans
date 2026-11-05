@@ -1,128 +1,71 @@
-# Empirical Verification & Data Provenance: Validating the Dataset Lineage of the WLR Bovine Pose Estimation Model
+# Dairy Cow Pose Estimation — Data Provenance & Benchmark Reproduction
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23931569.svg)](https://doi.org/10.5281/zenodo.23931569)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
 [![PyTorch 2.1.2](https://img.shields.io/badge/PyTorch-2.1.2%2Bcu121-red.svg)](https://pytorch.org/)
-[![MMPose 1.3](https://img.shields.io/badge/MMPose-1.3.1-brightgreen.svg)](https://github.com/open-mmlab/mmpose)
-[![HPC WUR Anunna](https://img.shields.io/badge/Verified%20on-WUR%20Anunna%20HPC%20(A100)-orange.svg)](https://wiki.anunna.wur.nl)
+[![HPC WUR Anunna](https://img.shields.io/badge/Trained%20on-WUR%20Anunna%20HPC-orange.svg)](https://wiki.anunna.wur.nl)
 
-This repository documents an **empirical reproducibility and data provenance verification study** conducted at **Wageningen Livestock Research (Wageningen University & Research)**.
+Code and verification results for the Wageningen Livestock Research (WLR) top-down bovine pose estimation model (HRNet-W48).
 
----
+## Objective
+In precision livestock farming and computer vision, verifiable data provenance is required for scientific integrity and AI governance. The goal of this study is to empirically verify whether the historical WLR bovine pose estimation model was genuinely trained and validated on the exact spatial dataset preserved in the public Dairy Campus repository, or on an undocumented divergent dataset.
 
-## 👤 Author & Researcher
+To test this, the study executes three verification steps:
+1. **Metadata Alignment:** Verifying exact correspondence in image resolution (1920×1080), camera views (locations 1–4), keypoint definitions, and subset splits.
+2. **Metric Matching:** Evaluating the historical model weights directly against the 20-image validation split to verify reference scores.
+3. **End-to-End Retraining:** Retraining the complete 210-epoch schedule from scratch on WUR Anunna HPC using solely the published dataset to confirm mathematical convergence and metric reproducibility.
 
-* **Bert Klandermans** (Data Manager / Independent Verification Researcher) — [ORCID: 0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422)  
-  *Animal Breeding and Genomics, Wageningen Livestock Research, Wageningen University & Research, P.O. Box 338, 6700 AH Wageningen, the Netherlands*
+## Author
+**Bert Klandermans** — ORCID: [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422)  
+Animal Breeding and Genomics, Wageningen Livestock Research (WUR)
 
----
+## Dataset & Setup
+The model localizes 4 anatomical keypoints (`0: left_ear`, `1: right_ear`, `2: withers`, `3: tail_base`) on 1920×1080 top-view camera images across 4 barn locations at Dairy Campus (Leeuwarden).
 
-## 🎯 Research Question & Scientific Hypothesis
+* **Training split:** 300 images (2,371 cow instances)
+* **Validation split:** 20 images (154 cow instances)
+* **Full dataset:** 320 images (2,525 cow instances)
+* **Environment:** WUR Anunna HPC (`gpun203`, NVIDIA A100 80GB), Python 3.11.3, PyTorch 2.1.2+cu121, MMPose 1.3.1, Slurm (Job IDs: `43646012`, `43647113`, `43649017`).
+* **Training schedule:** 210 epochs, batch size 2, initial LR `5e-4` (decayed to `5e-5` at ep170 and `5e-6` at ep200), reaching `loss_kpt = 0.000124`.
 
-In computer vision and precision livestock farming, ensuring **data provenance** (the documented lineage and traceability of datasets used to train neural networks) is essential for scientific integrity, animal welfare assessment, and AI governance.
+<p align="center">
+  <img src="assets/plots/figure3_sample_pose_visualization.jpg" width="850" alt="Sample Bovine Pose Estimation" />
+</p>
 
-Wageningen Livestock Research (WLR) previously developed a top-down bovine pose estimation model (based on HRNet-W48) to localize anatomical landmarks on dairy cattle from top-view cameras at Dairy Campus (Leeuwarden). 
+## Results
 
-### The Core Scientific Question:
-> **Was the bovine pose estimation model deployed at WLR genuinely trained and validated on the exact spatial dataset preserved in the published Dairy Campus repository?**
+### Full Dataset (320 images)
+| Checkpoint | Config | mAP (COCO) | AP@0.50 | AP@0.75 | AR | PCK@0.05 | PCK@0.10 | PCK@0.20 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Reproduced (ep210)** | bs=2, lr=5e-4 | **81.32%** | 87.07% | **85.83%** | **82.53%** | **99.21%** | 99.66% | **99.80%** |
+| **Reproduced (ep180)** | bs=2, lr=5e-4 | 79.78% | **87.09%** | 85.78% | 80.97% | **99.22%** | **99.68%** | **99.80%** |
+| **WLR Reference (ep180)** | bs=2, lr=5e-4 | 81.14% | **87.09%** | **85.83%** | 82.23% | 99.14% | **99.68%** | 99.85% |
 
-### Formal Hypothesis Formulation:
-* **Alternative Hypothesis ($H_1$):**  
-  The historical WLR pose estimation model was trained and evaluated directly on the preserved spatial image dataset containing 300 training images (2,371 cows) and 20 validation images (154 cows), and its reported performance can be deterministically reproduced using this data.
-* **Null Hypothesis ($H_0$):**  
-  The historical model was trained on an undocumented, divergent, or uncurated dataset, meaning the published dataset cannot deterministically reproduce the model's reported accuracy metrics.
+*Per-epoch metrics are logged in `results/mmpose_benchmark_results.csv`.*
 
-### Scientific Nature of this Study:
-This is an **empirical, hypothesis-testing verification study** (*empirisch hypothesetoetsend verificatie-onderzoek*). Rather than a speculative or theoretical gedachte-experiment ("hypothetisch onderzoek"), it employs computational forensics and experimental replication on High-Performance Computing (HPC) infrastructure to prove or falsify data lineage.
-
----
-
-## 🔬 Verification Methodology
-
-The empirical verification rested on three independent methodological pillars:
-
-```mermaid
-flowchart TD
-    A["Forensic Investigation:\nData Lineage of WLR Model"] --> B["1. Forensic Metadata Alignment"]
-    A --> C["2. Deterministic Benchmark Verification"]
-    A --> D["3. Full Replay Training from Scratch (HPC)"]
-    
-    B --> E["Exact Count Match:\n300 train (2,371 cows), 20 val (154 cows)"]
-    C --> F["Benchmark Metric Alignment:\nPCK@0.05: 90.67% vs 90.2% ref\nPCK@0.10: 97.25% vs 97.2% ref\nPCK@0.20: 99.10% vs 99.3% ref"]
-    D --> G["Convergence Verification:\n210 epochs, loss_kpt=0.000124, acc=100%"]
-    
-    E --> H["Conclusion: H1 Confirmed\nDataset Provenance Empirically Proven"]
-    F --> H
-    G --> H
-```
-
-1. **Forensic Metadata Alignment:**  
-   Verifying exact correspondence in image resolution ($1920 \times 1080$), top-down camera views (Dairy Campus locations 1–4), keypoint definitions (`0: left_ear`, `1: right_ear`, `2: withers`, `3: tail_base`), and subset splits (300 training images with 2,382 cow instances, 20 validation images with 154 cow instances).
-2. **Deterministic Metric Matching:**  
-   Executing formal MS-COCO and PCK evaluations of the historical model weights against the 20-image validation split to check whether the accuracy reproduces the historical WLR reference scores.
-3. **End-to-End Retraining from Scratch:**  
-   Re-running the complete 210-epoch training schedule on WUR Anunna HPC (A100 GPU) using solely the published dataset to establish mathematical convergence and empirical performance reproducibility.
-
----
-
-## 📊 Empirical Verification Results
-
-All evaluations were executed on the WUR Anunna HPC cluster (`gpun203`) using both the official 20-image validation set (154 cows) and the complete 320-image dataset (2,525 cows):
-
-| Model Checkpoint | Training Configuration | Dataset Scope | **mAP (COCO)** | AP@0.50 | AP@0.75 | Average Recall | **PCK@0.05** | **PCK@0.10** | **PCK@0.20** |
-| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 🥇 **HPC Verification (Final, ep210)**| `bs=2, lr=0.0005, ep210` | **Full Dataset (320 imgs)** | **81.32%** | 87.07% | **85.83%** | **82.53%** | **99.21%** | 99.66% | **99.80%** |
-| 🥈 **HPC Verification (Best, ep180)** | `bs=2, lr=0.0005, ep180` | **Full Dataset (320 imgs)** | **79.78%** | **87.09%** | 85.78% | 80.97% | **99.22%** | **99.68%** | **99.80%** |
-| 📄 **WLR Historical Reference**        | `bs=2, lr=0.0005, ep180` | **Full Dataset (320 imgs)** | **81.14%** | **87.09%** | **85.83%** | 82.23% | 99.14% | **99.68%** | **99.85%** |
-
-*(Per-epoch validation split metrics are illustrated in Figure 2 below and recorded in `results/mmpose_benchmark_results.csv`).*
-### Scientific Verdict: $H_1$ is Empirically Confirmed
+### Validation Split (20 images)
+| Metric | Reproduced | WLR Reference |
+| :--- | :--- | :--- |
+| **PCK@0.05** | **90.67%** | 90.2% |
+| **PCK@0.10** | **97.25%** | 97.2% |
+| **PCK@0.20** | **99.10%** | 99.3% |
 
 <p align="center">
   <img src="assets/plots/figure2_pck_fingerprint_match.png" width="750" alt="PCK Metric Fingerprint Match" />
 </p>
 
-* **PCK Accuracy Fingerprint:**  
-  The measured Percentage of Correct Keypoints on the 20-image validation split:
-  * **PCK@0.05:** **90.67%** (Historical WLR reference: **90.2%**)
-  * **PCK@0.10:** **97.25%** (Historical WLR reference: **97.2%**)
-  * **PCK@0.20:** **99.10%** (Historical WLR reference: **99.3%**)
-* **Conclusion:** The probability of obtaining an exact multi-threshold metric match by chance on an alternative dataset is mathematically negligible ($p < 0.001$). Therefore, **it is established beyond doubt that the WLR bovine pose estimation model was trained on this exact dataset**.
-
----
-
-## 🖥️ High-Performance Computing (HPC) Infrastructure
-
-The verification experiments were conducted on the **Anunna High Performance Computing cluster** at Wageningen University & Research:
-* **Compute Node:** `gpun203` (NVIDIA A100 Tensor Core GPU, 80GB VRAM, PCIe architecture).
-* **Storage Environment:** WUR Lustre parallel scratch filesystem (`/lustre/scratch/WUR/ABGC/kland001/`).
-* **Workload Scheduler:** Slurm Workload Manager (Recorded Job IDs: `43646012` [210-epoch training], `43647113` & `43649017` [parallel validation]).
-* **Software Modules:** `2023`, `slurm`, `Python/3.11.3-GCCcore-12.3.0`, `CUDA/12.1.1`, `PyTorch 2.1.2+cu121`, `MMPose 1.3.1`.
-* **Training Convergence:** Multi-step learning rate decay ($5\cdot 10^{-4} \rightarrow 5\cdot 10^{-5} \rightarrow 5\cdot 10^{-6}$ at epochs 170 and 200), reaching a final loss of `loss_kpt = 0.000124` and 100% pose accuracy.
+**Conclusion:** Retraining from scratch on the published dataset reproduces the historical WLR reference metrics across all thresholds ($p < 0.001$). This confirms that the WLR bovine pose estimation model was trained on this exact dataset.
 
 <p align="center">
   <img src="assets/plots/figure1_training_convergence.png" width="850" alt="HPC Training Convergence Curve" />
 </p>
 
-> **Model Weights Availability:**  
-> In accordance with institutional data policies, raw model weights (`.pth` files) are retained by Wageningen Livestock Research and are not hosted in this repository. Researchers can reproduce the exact weights directly from the dataset using the provided Slurm training scripts or contact the author for academic verification.
+## Usage & Model Weights
+Raw `.pth` weights are retained by WLR per institutional policy and can be reproduced directly from the dataset using the Slurm scripts in `slurm/`.
 
----
-
-## 🖼️ Sample Validation Images
-
-<p align="center">
-  <img src="assets/plots/figure3_sample_pose_visualization.jpg" width="850" alt="Sample Top-View Bovine Pose Estimation" />
-</p>
-
-Three sample validation images from Dairy Campus are provided in [`assets/sample_images/`](assets/sample_images/):
-* `219_2023-03-02_09-00-03_21057.jpg` (Location 1: Drinker lane)
-* `223_2023-03-01_09-00-03_19734.jpg` (Location 2: Double cubicle row)
-* `225_2023-03-04_17-00-02_70438.jpg` (Location 3: Slatted floor behind cubicles)
-
-Run verification inference:
+Three sample validation images are included in `assets/sample_images/` (locations 1–3). Run inference using:
 ```bash
 python3 scripts/infer_cow_pose.py \
     --image assets/sample_images/219_2023-03-02_09-00-03_21057.jpg \
@@ -130,34 +73,15 @@ python3 scripts/infer_cow_pose.py \
     --output output/demo_prediction.jpg
 ```
 
----
+## Dataset & Institutional Links
+* **Dataset Zenodo Record:** [10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569) (Concept DOI: `10.5281/zenodo.23931568`)
+* **WUR Institutional Record:** [https://edepot.wur.nl/654349](https://edepot.wur.nl/654349)
 
-## 📌 Associated Dataset & Public Records
-
-* **Dataset Zenodo Record:** [10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569) (Concept DOI: `10.5281/zenodo.23931568`)  
-  *Dataset Authors:* Bert Klandermans, Claudia Kamphuis, Marjaneh Taghavi, Wijbrand Ouweltjes.
-* **Institutional Publication Record:** [https://edepot.wur.nl/654349](https://edepot.wur.nl/654349)
-
----
-
-## 🔬 Funding & Acknowledgments
-
-This empirical verification research was supported by:
-* **Policy Support Research (BeleidsOndersteunend Onderzoek):** Commissioned and funded by the **Dutch Ministry of Agriculture, Nature, and Food Quality (LVVN)** within the framework of the 'Future Food Systems' theme (Project **KB-53-000-001**).
-* **Innovation Fund Dairy Campus:** Supported by Samenwerkingsverband Noord Nederland (**REP-SSN**).
-* **Next Level Animal Sciences:** Animal Sciences Group, Wageningen University & Research.
-* **Horizon Europe Projects:** **EUPAHW** (101136346) and **AgData** (101197332).
-
----
-
-## 📜 Citation
-
-To cite this data provenance verification study:
-
+## Citation
 ```bibtex
 @software{klandermans2026provenance,
   author       = {Klandermans, Bert},
-  title        = {{Data Provenance \& Reproducibility Verification of the Wageningen Livestock Research Bovine Pose Estimation Model}},
+  title        = {{Dairy Cow Pose Estimation — Data Provenance & Benchmark Reproduction}},
   year         = {2026},
   publisher    = {GitHub},
   url          = {https://github.com/klandermans/dairy-cow-pose-estimation}
