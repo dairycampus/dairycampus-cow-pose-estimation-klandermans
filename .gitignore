@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large Model Checkpoints (publish via Zenodo / Hugging Face)
+*.pth
+*.pt
+*.onnx
+*.engine
+*.bin
+weights/
+checkpoints/
+models/
+
+# Dataset files & Videos (publish via 4TU / Zenodo / WUR Data)
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.jpeg
+*.png
+data/
+datasets/
+coco_kpt_*/
+yolo_bbox_*/
+
+# Cluster & Slurm logs
+*.out
+*.err
+slurm-*.out
+slurm-*.err
+
+# Virtual environments
+venv/
+venv_*/
+.env
+.venv
+env/
+
+# IDE & OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Output & Work dirs
+work_dirs/
+eval_logs/
+output/
+runs/

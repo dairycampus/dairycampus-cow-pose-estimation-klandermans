@@ -1,0 +1,15 @@
+Model,Dataset,mAP,AP@0.50,AP@0.75,AR,PCK@0.05,PCK@0.10,PCK@0.20
+Tomas_Paper_Corr_ep180,Val (20 imgs),57.19,89.96,61.3,66.82,89.52,97.11,99.3
+Tomas_Paper_Corr_ep180,All 320 imgs (Train+Val),81.14,87.09,85.83,82.23,99.14,99.68,99.85
+Tomas_Uncorr_ep210,Val (20 imgs),17.39,29.83,16.54,20.95,24.27,29.26,32.5
+Tomas_Uncorr_ep210,All 320 imgs (Train+Val),11.3,19.14,11.19,13.63,27.3,31.59,35.85
+Tomas_It1_190imgs_ep190,Val (20 imgs),14.44,29.27,11.61,17.7,26.85,32.98,37.49
+Tomas_It1_190imgs_ep190,All 320 imgs (Train+Val),10.02,18.39,9.33,12.6,28.71,32.95,37.64
+Our_FastA100_BEST_ep180,Val (20 imgs),61.84,90.91,69.51,70.41,91.27,97.75,99.09
+Our_FastA100_BEST_ep180,All 320 imgs (Train+Val),84.21,87.1,86.44,84.93,99.37,99.8,99.89
+Our_FastA100_FINAL_ep210,Val (20 imgs),61.37,92.15,68.36,70.54,91.77,97.68,98.82
+Our_FastA100_FINAL_ep210,All 320 imgs (Train+Val),84.51,87.1,86.41,85.1,99.43,99.79,99.87
+Paper_Replay_bs2_ep80,Val (20 imgs),58.06,91.54,58.89,67.64,89.83,97.48,98.83
+Paper_Replay_bs2_ep80,All 320 imgs (Train+Val),66.06,86.51,75.87,69.5,98.23,99.27,99.65
+Paper_Replay_bs2_ep40,Val (20 imgs),58.51,90.66,64.73,67.7,90.59,97.11,98.16
+Paper_Replay_bs2_ep40,All 320 imgs (Train+Val),54.58,78.42,59.51,59.46,96.86,98.8,99.47
