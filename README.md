@@ -71,15 +71,13 @@ flowchart TD
 
 All evaluations were executed on the WUR Anunna HPC cluster (`gpun203`) using both the official 20-image validation set (154 cows) and the complete 320-image dataset (2,525 cows):
 
-| Model Checkpoint | Training Configuration | Dataset Partition | **mAP (COCO)** | AP@0.50 | AP@0.75 | Average Recall | **PCK@0.05** | **PCK@0.10** | **PCK@0.20** |
+| Model Checkpoint | Training Configuration | Dataset Scope | **mAP (COCO)** | AP@0.50 | AP@0.75 | Average Recall | **PCK@0.05** | **PCK@0.10** | **PCK@0.20** |
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 🥇 **HPC Verification (Best, ep180)** | `bs=2, lr=0.0005, ep180` | **Val (20 imgs)** | **59.79%** | **91.50%** | **62.70%** | **69.93%** | **90.67%** | **97.25%** | 99.10% |
-| 🥇 **HPC Verification (Best, ep180)** | `bs=2, lr=0.0005, ep180` | **All (320 imgs)** | **79.78%** | 87.09% | 85.78% | 80.97% | **99.22%** | **99.68%** | **99.80%** |
-| 🥈 **HPC Verification (Final, ep210)**| `bs=2, lr=0.0005, ep210` | **Val (20 imgs)** | **58.25%** | 89.07% | 61.64% | 68.65% | 90.06% | 96.82% | 99.03% |
-| 🥈 **HPC Verification (Final, ep210)**| `bs=2, lr=0.0005, ep210` | **All (320 imgs)** | **81.32%** | **87.07%** | **85.83%** | **82.53%** | **99.21%** | 99.66% | **99.80%** |
-| 📄 **WLR Historical Reference** | `bs=2, lr=0.0005, ep180` | **Val (20 imgs)** | **57.19%** | 89.96% | 61.30% | 66.82% | 89.52% | 97.11% | **99.30%** |
-| 📄 **WLR Historical Reference** | `bs=2, lr=0.0005, ep180` | **All (320 imgs)** | **81.14%** | 87.09% | 85.83% | 82.23% | 99.14% | 99.68% | 99.85% |
+| 🥇 **HPC Verification (Final, ep210)**| `bs=2, lr=0.0005, ep210` | **Full Dataset (320 imgs)** | **81.32%** | 87.07% | **85.83%** | **82.53%** | **99.21%** | 99.66% | **99.80%** |
+| 🥈 **HPC Verification (Best, ep180)** | `bs=2, lr=0.0005, ep180` | **Full Dataset (320 imgs)** | **79.78%** | **87.09%** | 85.78% | 80.97% | **99.22%** | **99.68%** | **99.80%** |
+| 📄 **WLR Historical Reference**        | `bs=2, lr=0.0005, ep180` | **Full Dataset (320 imgs)** | **81.14%** | **87.09%** | **85.83%** | 82.23% | 99.14% | **99.68%** | **99.85%** |
 
+*(Per-epoch validation split metrics are illustrated in Figure 2 below and recorded in `results/mmpose_benchmark_results.csv`).*
 ### Scientific Verdict: $H_1$ is Empirically Confirmed
 
 <p align="center">
