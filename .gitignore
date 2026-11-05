@@ -20,6 +20,8 @@ models/
 *.jpg
 *.jpeg
 *.png
+!assets/sample_images/*.jpg
+!assets/sample_images/*.png
 data/
 datasets/
 coco_kpt_*/
