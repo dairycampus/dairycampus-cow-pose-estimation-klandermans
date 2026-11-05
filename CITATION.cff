@@ -1,49 +1,32 @@
 cff-version: 1.2.0
-message: "If you use this dataset, models, or codebase, please cite it using the metadata below."
-title: "Dairy Campus - Bovine Pose Estimation Dataset & High-Throughput Deep Learning Pipeline"
+message: "If you use this empirical verification study or code, please cite it using the metadata below."
+title: "Data Provenance & Reproducibility Verification of the Wageningen Livestock Research Bovine Pose Estimation Model"
 authors:
   - family-names: Klandermans
     given-names: Bert
     orcid: "https://orcid.org/0009-0009-2173-9422"
     affiliation: "Animal Breeding and Genomics, Wageningen Livestock Research, Wageningen University & Research, the Netherlands"
-  - family-names: Kamphuis
-    given-names: Claudia
-    affiliation: "Animal Breeding and Genomics, Wageningen Livestock Research, Wageningen University & Research, the Netherlands"
-  - family-names: Taghavi
-    given-names: Marjaneh
-    affiliation: "Wageningen Livestock Research, Wageningen University & Research, the Netherlands"
-  - family-names: Ouweltjes
-    given-names: Wijbrand
-    affiliation: "Wageningen Livestock Research, Wageningen University & Research, the Netherlands"
 version: 1.0.0
 doi: "10.5281/zenodo.23931569"
-date-released: 2026-11-03
-url: "https://doi.org/10.5281/zenodo.23931569"
+date-released: 2026-11-05
+url: "https://github.com/klandermans/dairy-cow-pose-estimation"
 repository-code: "https://github.com/klandermans/dairy-cow-pose-estimation"
 license: "CC-BY-4.0"
 keywords:
+  - "data provenance"
+  - "empirical verification"
+  - "reproducibility study"
   - "bovine pose estimation"
-  - "dairy cow welfare"
   - "deep learning"
-  - "computer vision"
-  - "precision livestock farming"
   - "HRNet-W48"
   - "MMPose"
   - "Dairy Campus"
 preferred-citation:
-  type: data
+  type: software
   authors:
     - family-names: Klandermans
       given-names: Bert
       orcid: "https://orcid.org/0009-0009-2173-9422"
-    - family-names: Kamphuis
-      given-names: Claudia
-    - family-names: Taghavi
-      given-names: Marjaneh
-    - family-names: Ouweltjes
-      given-names: Wijbrand
-  title: "Dairy Campus - Bovine Pose Estimation Dataset"
+  title: "Data Provenance & Reproducibility Verification of the Wageningen Livestock Research Bovine Pose Estimation Model"
   year: 2026
-  publisher: "Zenodo"
-  doi: "10.5281/zenodo.23931569"
-  url: "https://edepot.wur.nl/654349"
+  url: "https://github.com/klandermans/dairy-cow-pose-estimation"
