@@ -158,6 +158,11 @@ python3 scripts/infer_cow_pose.py \
 
 ---
 
+## Acknowledgements
+We gratefully acknowledge **Tomás Izquierdo García-Faria** (Wageningen Livestock Research) for the initial development of the bovine pose estimation baseline configuration and historical model checkpoints at Dairy Campus.
+
+---
+
 ## Citation
 ```bibtex
 @software{klandermans2026provenance,
