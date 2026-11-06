@@ -12,7 +12,7 @@
 > **Tags:** `dairy-campus` · `dairy-campus-data` · `dairy-campus-cows` · `www.dairycampus.nl` · `bovine-pose-estimation` · `computer-vision` · `wageningen-ur`  
 > **Official Facility Website:** [www.dairycampus.nl](https://www.dairycampus.nl) (Leeuwarden, the Netherlands)
 
-Code and empirical audit data for verifying the dataset lineage and scientific reproducibility of the Wageningen Livestock Research (WLR) top-down bovine pose estimation model (HRNet-W48). All video footage, annotations, and cow subjects originate directly from **[Dairy Campus](https://www.dairycampus.nl)** (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)) — het is de data en het zijn de koeien van Dairy Campus (this is Dairy Campus data and these are Dairy Campus cows).
+Code and empirical audit data for verifying the dataset lineage and scientific reproducibility of the Wageningen Livestock Research (WLR) top-down bovine pose estimation model (HRNet-W48). All video footage, annotations, and cow subjects originate directly from **[Dairy Campus](https://www.dairycampus.nl)** (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)).
 
 ---
 
