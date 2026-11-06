@@ -1,6 +1,7 @@
 # Bovine Pose Estimation — Reproducibility Audit & Data Provenance Benchmark
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23931569.svg)](https://doi.org/10.5281/zenodo.23931569)
+[![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans/releases/tag/v1.0.0)
+[![Dataset DOI](https://img.shields.io/badge/Dataset%20DOI-10.5281%2Fzenodo.23931569-success.svg)](https://doi.org/10.5281/zenodo.23931569)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
@@ -18,6 +19,31 @@ Code and empirical audit data for verifying the dataset lineage and scientific r
 * **Kamphuis, Claudia** — Project Lead  
   ORCID: [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X)  
   *Animal Breeding and Genomics, Wageningen Livestock Research (WUR)*
+
+---
+
+## Primary Dataset Reference
+
+This audit and reproducibility benchmark evaluates the exact spatial dataset preserved in the public Dairy Campus repository:
+
+> **Klandermans, B., Kamphuis, C., Taghavi, M., & Ouweltjes, W. (2026).** *Dairy Campus - Bovine Pose Estimation Dataset* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569)
+
+### Dataset Metadata & Roles
+| Contributor | Role in Dataset | Affiliation | ORCID |
+| :--- | :--- | :--- | :--- |
+| **Klandermans, Bert** | Data Manager | Wageningen Livestock Research (WUR) | [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422) |
+| **Kamphuis, Claudia** | Project Leader | Wageningen Livestock Research (WUR) | [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X) |
+| **Taghavi, Marjaneh** | Annotator | Wageningen Livestock Research (WUR) | [0000-0001-8386-5744](https://orcid.org/0000-0001-8386-5744) |
+| **Ouweltjes, Wijbrand** | Annotator | Wageningen Livestock Research (WUR) | [0000-0001-5455-0110](https://orcid.org/0000-0001-5455-0110) |
+
+* **Zenodo Record:** [10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569) (Concept DOI: [10.5281/zenodo.23931568](https://doi.org/10.5281/zenodo.23931568))
+* **Archive File:** `Archive.zip` (209 MB)
+* **License:** Creative Commons Attribution 4.0 International (CC-BY 4.0)
+* **Copyright:** © 2026 Wageningen Livestock Research
+* **WUR Institutional Record:** [https://edepot.wur.nl/654349](https://edepot.wur.nl/654349)
+* **Dataset Scope:**
+  - **Spatial Keypoint Detection:** 300 annotated training images (2,371 cow instances) and 20 validation images (154 cow instances) across 4 barn locations (1920×1080 resolution).
+  - **Temporal Action Recognition:** 504 transition events (lying down, standing up, other) with event-boundary annotations for behavioral monitoring.
 
 ---
 
@@ -152,25 +178,40 @@ python3 scripts/infer_cow_pose.py \
 
 ---
 
-## Dataset & Institutional Links
-* **Dataset Zenodo Record:** [10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569) (Concept DOI: `10.5281/zenodo.23931568`)
-* **WUR Institutional Publication:** [https://edepot.wur.nl/654349](https://edepot.wur.nl/654349)
+## Acknowledgements & Funding
 
----
-
-## Acknowledgements
-We gratefully acknowledge **Tomás Izquierdo García-Faria** (Wageningen Livestock Research) for the initial development of the bovine pose estimation baseline configuration and historical model checkpoints at Dairy Campus.
+* **Historical Baseline:** We gratefully acknowledge **Tomás Izquierdo García-Faria** (Wageningen Livestock Research) for the initial development of the bovine pose estimation baseline configuration and historical model checkpoints at Dairy Campus.
+* **Funding Acknowledgements:**
+  - Dutch Ministry of Agriculture, Nature, and Food Quality within the framework of the 'Future Food Systems' theme (project number KB-53-000-001).
+  - Innovation Fund of Dairy Campus (supported by the Regional Economic Program of Samenwerkingsverband Noord Nederland - REP-SSN).
+  - Next Level Animal Sciences (Animal Sciences Group, Wageningen UR).
+  - Noldus Information Technology (Wageningen, the Netherlands).
+  - European Union Horizon Europe Project 101136346 (EUPAHW).
+  - Agriculture of Data (AgData) consortium (grant agreement no. 101197332).
 
 ---
 
 ## Citation
+
+### 1. Code & Benchmark Reproduction (This Repository)
 ```bibtex
 @software{klandermans2026provenance,
   author       = {Klandermans, Bert and Kamphuis, Claudia},
   title        = {{Bovine Pose Estimation — Reproducibility Audit & Data Provenance Benchmark}},
   year         = {2026},
   publisher    = {GitHub},
-  url          = {https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans},
-  doi          = {10.5281/zenodo.23931569}
+  url          = {https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans}
+}
+```
+
+### 2. Dairy Campus Pose Estimation Dataset
+```bibtex
+@dataset{klandermans2026dataset,
+  author       = {Klandermans, Bert and Kamphuis, Claudia and Taghavi, Marjaneh and Ouweltjes, Wijbrand},
+  title        = {{Dairy Campus - Bovine Pose Estimation Dataset}},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.23931569},
+  url          = {https://doi.org/10.5281/zenodo.23931569}
 }
 ```
