@@ -30,9 +30,6 @@ This audit and reproducibility benchmark evaluates the exact spatial dataset pre
 
 > **Klandermans, B., Kamphuis, C., Taghavi, M., & Ouweltjes Wijbrand. (2026).** *Dairy Campus - Bovine Pose Estimation Dataset* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569)
 
-> [!IMPORTANT]
-> **Dairy Campus Data & Dairy Campus Cows:**  
-> All data and cows in this dataset and audit originate directly from [Dairy Campus](https://www.dairycampus.nl) (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)). The cows filmed, tracked, and annotated are the dairy cows housed at the Dairy Campus research facility, providing the authentic empirical ground truth for automated precision livestock farming and welfare monitoring.
 
 ### Dataset Metadata & Roles
 | Contributor | Role in Dataset | Affiliation(s) | ORCID |
