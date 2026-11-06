@@ -112,6 +112,7 @@ The model detects 4 anatomical keypoints (`0: left_ear`, `1: right_ear`, `2: wit
 ├── configs/
 │   └── td-hm_hrnet-w48_8xb64-210e_ap10k-256x256.py  # HRNet-W48 210-epoch architecture configuration
 ├── scripts/
+│   ├── download_dataset.py                          # Downloads & unpacks Archive.zip from Zenodo
 │   ├── train_hrnet_baseline.py                      # Retrains the complete 210-epoch schedule from scratch
 │   ├── evaluate_provenance.py                       # Evaluates checkpoints against val (20) & combined (320) sets
 │   ├── infer_cow_pose.py                            # Standalone inference on raw barn images
@@ -155,6 +156,21 @@ mim install mmengine
 mim install "mmcv>=2.1.0"
 mim install "mmpose>=1.1.0"
 ```
+
+### 3. Dataset Download & Preparation (Zenodo)
+Retrieve the official dataset directly from Zenodo Record [10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569):
+
+* **Direct Automated Download (Public Record):**
+  ```bash
+  python3 scripts/download_dataset.py --prepare-combined
+  ```
+
+* **Draft / Preview Mode (Prior to public release):**
+  Download `Archive.zip` via your authenticated browser session from [https://zenodo.org/records/23931569?preview=1](https://zenodo.org/records/23931569?preview=1) and run:
+  ```bash
+  python3 scripts/download_dataset.py --zip-file /path/to/Archive.zip --prepare-combined
+  ```
+  *(Or authenticate the API using your Zenodo Personal Access Token: `python3 scripts/download_dataset.py --token <TOKEN>`)*
 
 ---
 
