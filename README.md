@@ -22,7 +22,7 @@ Code and empirical audit data for verifying the dataset lineage and scientific r
 **Affiliations:**  
 ¹ *Wageningen University & Research, Animal Breeding and Genomics, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands*  
 ² *Wageningen University & Research, Dairy Campus, Boksumerdyk 11, 8912 CA Leeuwarden, Fryslàn, the Netherlands*  
-
+³ *Wageningen University & Research, Animal Health & Welfare, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands*
 
 ---
 
@@ -30,7 +30,7 @@ Code and empirical audit data for verifying the dataset lineage and scientific r
 
 This audit and reproducibility benchmark evaluates the exact spatial dataset preserved in the public Dairy Campus repository:
 
-> **Klandermans, B., Kamphuis, C., Taghavi, M. & Ouweltjes W. (2026).** *Dairy Campus - Bovine Pose Estimation Dataset* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569)
+> **Klandermans, B., Kamphuis, C., Taghavi, M., & Ouweltjes Wijbrand. (2026).** *Dairy Campus - Bovine Pose Estimation Dataset* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569)
 
 > [!IMPORTANT]
 > **Dairy Campus Data & Dairy Campus Cows:**  
@@ -139,6 +139,10 @@ The model detects 4 anatomical keypoints (`0: left_ear`, `1: right_ear`, `2: wit
 └── CITATION.cff                                     # Machine-readable citation metadata
 ```
 
+> [!NOTE]
+> **Interactive Reproducibility Audit Notebook:**  
+> Reviewers and researchers can inspect the full end-to-end provenance verification workflow in [`notebooks/bovine_pose_verification_and_audit.ipynb`](notebooks/bovine_pose_verification_and_audit.ipynb). The notebook includes pre-rendered cell outputs, inline anatomical keypoint visualizations, and automated statistical parity validation.
+
 > [!TIP]
 > **HPC vs. Local Execution:**  
 > Files in `slurm/` are reference scripts configured for the WUR Anunna cluster environment. For local GPU workstations or non-Slurm servers, execute the corresponding Python scripts in `scripts/` directly using standard CLI flags.
@@ -201,15 +205,19 @@ python3 scripts/infer_cow_pose.py \
 ## Acknowledgements
 
 * **Historical Baseline:** We gratefully acknowledge **Tomás Izquierdo García-Faria** (Wageningen Livestock Research) for the initial development of the bovine pose estimation baseline configuration and historical model checkpoints at Dairy Campus.
+
 ---
 
 ## Citation
 
 ### 1. Code & Benchmark Reproduction (This Repository)
+> Klandermans, B., & Kamphuis, C. (2026). *Bovine Pose Estimation — Reproducibility Audit & Data Provenance Benchmark* (Version 1.0.0) [Computer software]. GitHub. [https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans](https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans)
+
 ```bibtex
 @software{klandermans2026provenance,
   author       = {Klandermans, Bert and Kamphuis, Claudia},
   title        = {{Bovine Pose Estimation — Reproducibility Audit & Data Provenance Benchmark}},
+  version      = {1.0.0},
   year         = {2026},
   publisher    = {GitHub},
   url          = {https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans}
@@ -217,6 +225,8 @@ python3 scripts/infer_cow_pose.py \
 ```
 
 ### 2. Dairy Campus Pose Estimation Dataset
+> Klandermans, B., Kamphuis, C., Taghavi, M., & Ouweltjes Wijbrand. (2026). *Dairy Campus - Bovine Pose Estimation Dataset* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569)
+
 ```bibtex
 @dataset{klandermans2026dataset,
   author       = {Klandermans, Bert and Kamphuis, Claudia and Taghavi, Marjaneh and {Ouweltjes Wijbrand}},
