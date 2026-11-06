@@ -1,129 +1,176 @@
-default_scope = 'mmpose'
+# -*- coding: utf-8 -*-
+"""
+================================================================================
+Bovine Pose Estimation — Reproducibility Audit & Data Provenance Benchmark
+================================================================================
+File:         configs/td-hm_hrnet-w48_8xb64-210e_ap10k-256x256.py
+Description:  MMPose model architecture and training schedule configuration
+              for top-down HRNet-W48 heatmap pose estimation (210 epochs).
+Author:       Bert Klandermans (Data Scientist)
+              ORCID: https://orcid.org/0009-0009-2173-9422
+Project Lead: Dr. Claudia Kamphuis
+              ORCID: https://orcid.org/0000-0001-5552-036X
+Affiliation:  Animal Breeding and Genomics, Wageningen Livestock Research (WUR)
+Facility:     Dairy Campus, Leeuwarden, the Netherlands
+Dataset DOI:  https://doi.org/10.5281/zenodo.23931569
+Repository:   https://github.com/dairycampus/
+              dairycampus-cow-pose-estimation-klandermans
+License:      CC-BY-4.0 / Apache-2.0
+================================================================================
+"""
+
+default_scope = "mmpose"
 default_hooks = dict(
-    timer=dict(type='IterTimerHook'),
-    logger=dict(type='LoggerHook', interval=50),
-    param_scheduler=dict(type='ParamSchedulerHook'),
+    timer=dict(type="IterTimerHook"),
+    logger=dict(type="LoggerHook", interval=50),
+    param_scheduler=dict(type="ParamSchedulerHook"),
     checkpoint=dict(
-        type='CheckpointHook',
-        interval=10,
-        save_best='coco/AP',
-        rule='greater'),
-    sampler_seed=dict(type='DistSamplerSeedHook'),
-    visualization=dict(type='PoseVisualizationHook', enable=False))
+        type="CheckpointHook", interval=10, save_best="coco/AP", rule="greater"
+    ),
+    sampler_seed=dict(type="DistSamplerSeedHook"),
+    visualization=dict(type="PoseVisualizationHook", enable=False),
+)
 custom_hooks = [
-    dict(type='SyncBuffersHook'),
+    dict(type="SyncBuffersHook"),
 ]
 env_cfg = dict(
     cudnn_benchmark=False,
-    mp_cfg=dict(mp_start_method='fork', opencv_num_threads=0),
-    dist_cfg=dict(backend='nccl'))
+    mp_cfg=dict(mp_start_method="fork", opencv_num_threads=0),
+    dist_cfg=dict(backend="nccl"),
+)
 vis_backends = [
-    dict(type='LocalVisBackend'),
+    dict(type="LocalVisBackend"),
 ]
 visualizer = dict(
-    type='PoseLocalVisualizer',
+    type="PoseLocalVisualizer",
     vis_backends=[
-        dict(type='LocalVisBackend'),
+        dict(type="LocalVisBackend"),
     ],
-    name='visualizer')
-log_processor = dict(
-    type='LogProcessor', window_size=50, by_epoch=True, num_digits=6)
-log_level = 'INFO'
-load_from = './checkpoints/hrnet_w48_ap10k_256x256-d95ab412_20211029.pth'
+    name="visualizer",
+)
+log_processor = dict(type="LogProcessor", window_size=50, by_epoch=True, num_digits=6)
+log_level = "INFO"
+load_from = "./checkpoints/hrnet_w48_ap10k_256x256-d95ab412_20211029.pth"
 resume = False
-backend_args = dict(backend='local')
+backend_args = dict(backend="local")
 train_cfg = dict(by_epoch=True, max_epochs=210, val_interval=10)
 val_cfg = dict()
 test_cfg = dict()
 dataset_info = dict(
-    dataset_name='cow_ap10k',
+    dataset_name="cow_ap10k",
     paper_info=dict(
-        author=
-        'Yu, Hang and Xu, Yufei and Zhang, Jing and Zhao, Wei and Guan, Ziyu and Tao, Dacheng',
-        title='AP-10K: A Benchmark for Animal Pose Estimation in the Wild',
-        container=
-        '35th Conference on Neural Information Processing Systems (NeurIPS 2021) Track on Datasets and Bench-marks.',
-        year='2021',
-        homepage='https://github.com/AlexTheBad/AP-10K'),
-    keypoint_info=dict({
-        0:
-        dict(
-            name='r_ear',
-            id=0,
-            color=[
-                255,
-                128,
-                0,
-            ],
-            type='upper',
-            swap='l_ear'),
-        1:
-        dict(
-            name='l_ear',
-            id=1,
-            color=[
-                0,
-                255,
-                0,
-            ],
-            type='upper',
-            swap='r_ear'),
-        2:
-        dict(
-            name='withers',
-            id=2,
-            color=[
-                51,
-                153,
-                255,
-            ],
-            type='upper',
-            swap=''),
-        3:
-        dict(name='tail', id=3, color=[
-            51,
-            153,
-            255,
-        ], type='lower', swap='')
-    }),
-    skeleton_info=dict({
-        0:
-        dict(link=(
-            'withers',
-            'r_ear',
-        ), id=0, color=[
-            51,
-            153,
-            255,
-        ]),
-        1:
-        dict(link=(
-            'withers',
-            'l_ear',
-        ), id=1, color=[
-            0,
-            255,
-            0,
-        ]),
-        2:
-        dict(link=(
-            'l_ear',
-            'r_ear',
-        ), id=2, color=[
-            255,
-            128,
-            0,
-        ]),
-        3:
-        dict(link=(
-            'tail',
-            'withers',
-        ), id=3, color=[
-            0,
-            255,
-            0,
-        ])
-    }),
+        author=(
+            "Yu, Hang and Xu, Yufei and Zhang, Jing and Zhao, Wei and Guan, Ziyu"
+            " and Tao, Dacheng"
+        ),
+        title="AP-10K: A Benchmark for Animal Pose Estimation in the Wild",
+        container=(
+            "35th Conference on Neural Information Processing Systems "
+            "(NeurIPS 2021) Track on Datasets and Bench-marks."
+        ),
+        year="2021",
+        homepage="https://github.com/AlexTheBad/AP-10K",
+    ),
+    keypoint_info=dict(
+        {
+            0: dict(
+                name="r_ear",
+                id=0,
+                color=[
+                    255,
+                    128,
+                    0,
+                ],
+                type="upper",
+                swap="l_ear",
+            ),
+            1: dict(
+                name="l_ear",
+                id=1,
+                color=[
+                    0,
+                    255,
+                    0,
+                ],
+                type="upper",
+                swap="r_ear",
+            ),
+            2: dict(
+                name="withers",
+                id=2,
+                color=[
+                    51,
+                    153,
+                    255,
+                ],
+                type="upper",
+                swap="",
+            ),
+            3: dict(
+                name="tail",
+                id=3,
+                color=[
+                    51,
+                    153,
+                    255,
+                ],
+                type="lower",
+                swap="",
+            ),
+        }
+    ),
+    skeleton_info=dict(
+        {
+            0: dict(
+                link=(
+                    "withers",
+                    "r_ear",
+                ),
+                id=0,
+                color=[
+                    51,
+                    153,
+                    255,
+                ],
+            ),
+            1: dict(
+                link=(
+                    "withers",
+                    "l_ear",
+                ),
+                id=1,
+                color=[
+                    0,
+                    255,
+                    0,
+                ],
+            ),
+            2: dict(
+                link=(
+                    "l_ear",
+                    "r_ear",
+                ),
+                id=2,
+                color=[
+                    255,
+                    128,
+                    0,
+                ],
+            ),
+            3: dict(
+                link=(
+                    "tail",
+                    "withers",
+                ),
+                id=3,
+                color=[
+                    0,
+                    255,
+                    0,
+                ],
+            ),
+        }
+    ),
     joint_weights=[
         1.0,
         1.0,
@@ -135,13 +182,13 @@ dataset_info = dict(
         0.025,
         0.025,
         0.025,
-    ])
-optim_wrapper = dict(optimizer=dict(type='Adam', lr=0.0005))
+    ],
+)
+optim_wrapper = dict(optimizer=dict(type="Adam", lr=0.0005))
 param_scheduler = [
+    dict(type="LinearLR", begin=0, end=500, start_factor=0.001, by_epoch=False),
     dict(
-        type='LinearLR', begin=0, end=500, start_factor=0.001, by_epoch=False),
-    dict(
-        type='MultiStepLR',
+        type="MultiStepLR",
         begin=0,
         end=210,
         milestones=[
@@ -149,11 +196,12 @@ param_scheduler = [
             200,
         ],
         gamma=0.1,
-        by_epoch=True),
+        by_epoch=True,
+    ),
 ]
 auto_scale_lr = dict(base_batch_size=512)
 codec = dict(
-    type='MSRAHeatmap',
+    type="MSRAHeatmap",
     input_size=(
         256,
         256,
@@ -162,11 +210,12 @@ codec = dict(
         64,
         64,
     ),
-    sigma=2)
+    sigma=2,
+)
 model = dict(
-    type='TopdownPoseEstimator',
+    type="TopdownPoseEstimator",
     data_preprocessor=dict(
-        type='PoseDataPreprocessor',
+        type="PoseDataPreprocessor",
         mean=[
             123.675,
             116.28,
@@ -177,21 +226,23 @@ model = dict(
             57.12,
             57.375,
         ],
-        bgr_to_rgb=True),
+        bgr_to_rgb=True,
+    ),
     backbone=dict(
-        type='HRNet',
+        type="HRNet",
         in_channels=3,
         extra=dict(
             stage1=dict(
                 num_modules=1,
                 num_branches=1,
-                block='BOTTLENECK',
-                num_blocks=(4, ),
-                num_channels=(64, )),
+                block="BOTTLENECK",
+                num_blocks=(4,),
+                num_channels=(64,),
+            ),
             stage2=dict(
                 num_modules=1,
                 num_branches=2,
-                block='BASIC',
+                block="BASIC",
                 num_blocks=(
                     4,
                     4,
@@ -199,11 +250,12 @@ model = dict(
                 num_channels=(
                     48,
                     96,
-                )),
+                ),
+            ),
             stage3=dict(
                 num_modules=4,
                 num_branches=3,
-                block='BASIC',
+                block="BASIC",
                 num_blocks=(
                     4,
                     4,
@@ -213,11 +265,12 @@ model = dict(
                     48,
                     96,
                     192,
-                )),
+                ),
+            ),
             stage4=dict(
                 num_modules=3,
                 num_branches=4,
-                block='BASIC',
+                block="BASIC",
                 num_blocks=(
                     4,
                     4,
@@ -229,20 +282,25 @@ model = dict(
                     96,
                     192,
                     384,
-                ))),
+                ),
+            ),
+        ),
         init_cfg=dict(
-            type='Pretrained',
-            checkpoint=
-            'https://download.openmmlab.com/mmpose/pretrain_models/hrnet_w48-8ef0771d.pth'
-        )),
+            type="Pretrained",
+            checkpoint=(
+                "https://download.openmmlab.com/mmpose/pretrain_models/"
+                "hrnet_w48-8ef0771d.pth"
+            ),
+        ),
+    ),
     head=dict(
-        type='HeatmapHead',
+        type="HeatmapHead",
         in_channels=48,
         out_channels=4,
         deconv_out_channels=None,
-        loss=dict(type='KeypointMSELoss', use_target_weight=True),
+        loss=dict(type="KeypointMSELoss", use_target_weight=True),
         decoder=dict(
-            type='MSRAHeatmap',
+            type="MSRAHeatmap",
             input_size=(
                 256,
                 256,
@@ -251,25 +309,31 @@ model = dict(
                 64,
                 64,
             ),
-            sigma=2)),
-    test_cfg=dict(flip_test=False, shift_heatmap=True))
-dataset_type = 'AP10KCowDataset'
-data_mode = 'topdown'
-data_name = 'cow_barn_it1it2_300_20'
-data_root = 'data/cow_barn_it1it2_300_20'
+            sigma=2,
+        ),
+    ),
+    test_cfg=dict(flip_test=False, shift_heatmap=True),
+)
+dataset_type = "AP10KCowDataset"
+data_mode = "topdown"
+data_name = "cow_barn_it1it2_300_20"
+data_root = "data/cow_barn_it1it2_300_20"
 train_pipeline = [
-    dict(type='LoadImage'),
-    dict(type='GetBBoxCenterScale'),
-    dict(type='RandomHalfBody'),
-    dict(type='RandomBBoxTransform'),
-    dict(type='TopdownAffine', input_size=(
-        256,
-        256,
-    )),
+    dict(type="LoadImage"),
+    dict(type="GetBBoxCenterScale"),
+    dict(type="RandomHalfBody"),
+    dict(type="RandomBBoxTransform"),
     dict(
-        type='GenerateTarget',
+        type="TopdownAffine",
+        input_size=(
+            256,
+            256,
+        ),
+    ),
+    dict(
+        type="GenerateTarget",
         encoder=dict(
-            type='MSRAHeatmap',
+            type="MSRAHeatmap",
             input_size=(
                 256,
                 256,
@@ -278,42 +342,50 @@ train_pipeline = [
                 64,
                 64,
             ),
-            sigma=2)),
-    dict(type='PackPoseInputs'),
+            sigma=2,
+        ),
+    ),
+    dict(type="PackPoseInputs"),
 ]
 val_pipeline = [
-    dict(type='LoadImage'),
-    dict(type='GetBBoxCenterScale'),
-    dict(type='TopdownAffine', input_size=(
-        256,
-        256,
-    )),
-    dict(type='PackPoseInputs'),
+    dict(type="LoadImage"),
+    dict(type="GetBBoxCenterScale"),
+    dict(
+        type="TopdownAffine",
+        input_size=(
+            256,
+            256,
+        ),
+    ),
+    dict(type="PackPoseInputs"),
 ]
 train_dataloader = dict(
     batch_size=2,
     num_workers=1,
     persistent_workers=True,
-    sampler=dict(type='DefaultSampler', shuffle=True),
+    sampler=dict(type="DefaultSampler", shuffle=True),
     dataset=dict(
-        type='AP10KCowDataset',
-        data_root='data/cow_barn_it1it2_300_20',
-        data_mode='topdown',
-        ann_file='train/annotations/instances_default.json',
-        data_prefix=dict(img='train/images'),
+        type="AP10KCowDataset",
+        data_root="data/cow_barn_it1it2_300_20",
+        data_mode="topdown",
+        ann_file="train/annotations/instances_default.json",
+        data_prefix=dict(img="train/images"),
         pipeline=[
-            dict(type='LoadImage'),
-            dict(type='GetBBoxCenterScale'),
-            dict(type='RandomHalfBody'),
-            dict(type='RandomBBoxTransform'),
-            dict(type='TopdownAffine', input_size=(
-                256,
-                256,
-            )),
+            dict(type="LoadImage"),
+            dict(type="GetBBoxCenterScale"),
+            dict(type="RandomHalfBody"),
+            dict(type="RandomBBoxTransform"),
             dict(
-                type='GenerateTarget',
+                type="TopdownAffine",
+                input_size=(
+                    256,
+                    256,
+                ),
+            ),
+            dict(
+                type="GenerateTarget",
                 encoder=dict(
-                    type='MSRAHeatmap',
+                    type="MSRAHeatmap",
                     input_size=(
                         256,
                         256,
@@ -322,84 +394,101 @@ train_dataloader = dict(
                         64,
                         64,
                     ),
-                    sigma=2)),
-            dict(type='PackPoseInputs'),
-        ]))
+                    sigma=2,
+                ),
+            ),
+            dict(type="PackPoseInputs"),
+        ],
+    ),
+)
 val_dataloader = dict(
     batch_size=2,
     num_workers=1,
     persistent_workers=True,
     drop_last=False,
-    sampler=dict(type='DefaultSampler', shuffle=False, round_up=False),
+    sampler=dict(type="DefaultSampler", shuffle=False, round_up=False),
     dataset=dict(
-        type='AP10KCowDataset',
-        data_root='data/cow_barn_it1it2_300_20',
-        data_mode='topdown',
-        ann_file='val/annotations/instances_default.json',
-        data_prefix=dict(img='val/images'),
+        type="AP10KCowDataset",
+        data_root="data/cow_barn_it1it2_300_20",
+        data_mode="topdown",
+        ann_file="val/annotations/instances_default.json",
+        data_prefix=dict(img="val/images"),
         test_mode=True,
         pipeline=[
-            dict(type='LoadImage'),
-            dict(type='GetBBoxCenterScale'),
-            dict(type='TopdownAffine', input_size=(
-                256,
-                256,
-            )),
-            dict(type='PackPoseInputs'),
-        ]))
+            dict(type="LoadImage"),
+            dict(type="GetBBoxCenterScale"),
+            dict(
+                type="TopdownAffine",
+                input_size=(
+                    256,
+                    256,
+                ),
+            ),
+            dict(type="PackPoseInputs"),
+        ],
+    ),
+)
 test_dataloader = dict(
     batch_size=2,
     num_workers=1,
     persistent_workers=True,
     drop_last=False,
-    sampler=dict(type='DefaultSampler', shuffle=False, round_up=False),
+    sampler=dict(type="DefaultSampler", shuffle=False, round_up=False),
     dataset=dict(
-        type='AP10KCowDataset',
-        data_root='data/cow_barn_it1it2_300_20',
-        data_mode='topdown',
-        ann_file='val/annotations/instances_default.json',
-        data_prefix=dict(img='val/images'),
+        type="AP10KCowDataset",
+        data_root="data/cow_barn_it1it2_300_20",
+        data_mode="topdown",
+        ann_file="val/annotations/instances_default.json",
+        data_prefix=dict(img="val/images"),
         test_mode=True,
         pipeline=[
-            dict(type='LoadImage'),
-            dict(type='GetBBoxCenterScale'),
-            dict(type='TopdownAffine', input_size=(
-                256,
-                256,
-            )),
-            dict(type='PackPoseInputs'),
-        ]))
+            dict(type="LoadImage"),
+            dict(type="GetBBoxCenterScale"),
+            dict(
+                type="TopdownAffine",
+                input_size=(
+                    256,
+                    256,
+                ),
+            ),
+            dict(type="PackPoseInputs"),
+        ],
+    ),
+)
 val_evaluator = dict(
-    type='CocoMetric',
-    ann_file=
-    'data/cow_barn_it1it2_300_20/val/annotations/instances_default.json')
+    type="CocoMetric",
+    ann_file="data/cow_barn_it1it2_300_20/val/annotations/instances_default.json",
+)
 test_evaluator = dict(
-    type='CocoMetric',
-    ann_file=
-    'data/cow_barn_it1it2_300_20/val/annotations/instances_default.json')
-evaluation = dict(interval=5, metric='mAP', save_best='AP')
+    type="CocoMetric",
+    ann_file="data/cow_barn_it1it2_300_20/val/annotations/instances_default.json",
+)
+evaluation = dict(interval=5, metric="mAP", save_best="AP")
 checkpoint_config = dict(interval=20)
 log_config = dict(
     interval=10,
     hooks=[
-        dict(type='TextLoggerHook'),
+        dict(type="TextLoggerHook"),
         dict(
-            type='WandbLoggerHook',
+            type="WandbLoggerHook",
             init_kwargs=dict(
-                entity='tomas_wur',
-                project='cow_barn_keypoint',
-                name='cow_barn_it1it2_300_20'),
-            interval=10),
-    ])
+                entity="tomas_wur",
+                project="cow_barn_keypoint",
+                name="cow_barn_it1it2_300_20",
+            ),
+            interval=10,
+        ),
+    ],
+)
 workflow = [
     (
-        'train',
+        "train",
         1,
     ),
     (
-        'val',
+        "val",
         1,
     ),
 ]
-launcher = 'none'
-work_dir = 'output/hrnet_w48_ap10k_300_20'
+launcher = "none"
+work_dir = "output/hrnet_w48_ap10k_300_20"
