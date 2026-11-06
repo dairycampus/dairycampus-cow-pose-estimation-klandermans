@@ -17,13 +17,16 @@ Code and empirical audit data for verifying the dataset lineage and scientific r
 ---
 
 ## Research Team & Attribution
-* **Klandermans, Bert** — Data Scientist & First Author  
+* **Klandermans, Bert** — Data Scientist & First Author 1,2  
   ORCID: [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422)  
   *Animal Breeding and Genomics, Wageningen Livestock Research (WUR)*
 * **Kamphuis, Claudia** — Project Lead  
-  ORCID: [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X)  
+  ORCID: [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X)  1
   *Animal Breeding and Genomics, Wageningen Livestock Research (WUR)*
 
+
+1. Wageningen University & Research, Animal Breeding and Genomics, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands
+2. Wageningen University & Research, Dairy Campus, Boksumerdyk 11, 8912 CA Leeuwarden, Fryslàn, the Netherlands
 ---
 
 ## Primary Dataset Reference
