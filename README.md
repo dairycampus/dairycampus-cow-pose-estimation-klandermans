@@ -1,14 +1,14 @@
 # Bovine Pose Estimation — Reproducibility Audit & Data Provenance Benchmark
 
 [![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans/releases/tag/v1.0.0)
+[![Dairy Campus: Data & Cows](https://img.shields.io/badge/Dairy%20Campus-Data%20%26%20Cows-008080.svg)](https://www.dairycampus.nl)
 [![Dataset DOI](https://img.shields.io/badge/Dataset%20DOI-10.5281%2Fzenodo.23931569-success.svg)](https://doi.org/10.5281/zenodo.23931569)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
 [![PyTorch 2.1.2](https://img.shields.io/badge/PyTorch-2.1.2%2Bcu121-red.svg)](https://pytorch.org/)
 [![HPC WUR Anunna](https://img.shields.io/badge/Trained%20on-WUR%20Anunna%20HPC-orange.svg)](https://wiki.anunna.wur.nl)
 
-Code and empirical audit data for verifying the dataset lineage and scientific reproducibility of the Wageningen Livestock Research (WLR) top-down bovine pose estimation model (HRNet-W48).
+Code and empirical audit data for verifying the dataset lineage and scientific reproducibility of the Wageningen Livestock Research (WLR) top-down bovine pose estimation model (HRNet-W48). All video footage, annotations, and cow subjects originate directly from **[Dairy Campus](https://www.dairycampus.nl)** (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)) — this is Dairy Campus data and these are Dairy Campus cows.
 
 ---
 
@@ -27,6 +27,10 @@ Code and empirical audit data for verifying the dataset lineage and scientific r
 This audit and reproducibility benchmark evaluates the exact spatial dataset preserved in the public Dairy Campus repository:
 
 > **Klandermans, B., Kamphuis, C., Taghavi, M., & Ouweltjes, W. (2026).** *Dairy Campus - Bovine Pose Estimation Dataset* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569)
+
+> [!IMPORTANT]
+> **Dairy Campus Data & Dairy Campus Cows:**  
+> All data and cows in this dataset and audit originate directly from [Dairy Campus](https://www.dairycampus.nl) (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)). The cows filmed, tracked, and annotated are the dairy cows housed at the Dairy Campus research facility, providing the authentic empirical ground truth for automated precision livestock farming and welfare monitoring.
 
 ### Dataset Metadata & Roles
 | Contributor | Role in Dataset | Affiliation | ORCID |
@@ -58,7 +62,7 @@ The investigation tests this through a three-stage empirical audit:
 ---
 
 ## Dataset & Technical Setup
-The model detects 4 anatomical keypoints (`0: left_ear`, `1: right_ear`, `2: withers`, `3: tail_base`) on 1920×1080 top-view barn surveillance cameras at Dairy Campus (Leeuwarden, the Netherlands).
+The model detects 4 anatomical keypoints (`0: left_ear`, `1: right_ear`, `2: withers`, `3: tail_base`) on 1920×1080 top-view barn surveillance cameras at **[Dairy Campus](https://www.dairycampus.nl)** (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)). All imagery captures resident Dairy Campus cows across 4 barn locations.
 
 * **Training split:** 300 images (2,371 cow instances)
 * **Validation split:** 20 images (154 cow instances)
@@ -199,7 +203,7 @@ python3 scripts/infer_cow_pose.py \
 * **Historical Baseline:** We gratefully acknowledge **Tomás Izquierdo García-Faria** (Wageningen Livestock Research) for the initial development of the bovine pose estimation baseline configuration and historical model checkpoints at Dairy Campus.
 * **Funding Acknowledgements:**
   - Dutch Ministry of Agriculture, Nature, and Food Quality within the framework of the 'Future Food Systems' theme (project number KB-53-000-001).
-  - Innovation Fund of Dairy Campus (supported by the Regional Economic Program of Samenwerkingsverband Noord Nederland - REP-SSN).
+  - Innovation Fund of [Dairy Campus](https://www.dairycampus.nl) (supported by the Regional Economic Program of Samenwerkingsverband Noord Nederland - REP-SSN).
   - Next Level Animal Sciences (Animal Sciences Group, Wageningen UR).
   - Noldus Information Technology (Wageningen, the Netherlands).
   - European Union Horizon Europe Project 101136346 (EUPAHW).

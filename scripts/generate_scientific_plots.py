@@ -10,14 +10,14 @@ Description:  Generates publication figures for the bovine pose provenance study
               - Figure 3: Ground-Truth Dataset Annotation & Landmark Visualization
 Author:       Bert Klandermans (Data Scientist)
               ORCID: https://orcid.org/0009-0009-2173-9422
-Project Lead: Dr. Claudia Kamphuis
+Project Lead: Claudia Kamphuis
               ORCID: https://orcid.org/0000-0001-5552-036X
 Affiliation:  Animal Breeding and Genomics, Wageningen Livestock Research (WUR)
 Facility:     Dairy Campus, Leeuwarden, the Netherlands
 Dataset DOI:  https://doi.org/10.5281/zenodo.23931569
 Repository:   https://github.com/dairycampus/
               dairycampus-cow-pose-estimation-klandermans
-License:      CC-BY-4.0 / Apache-2.0
+License:      CC-BY-4.0
 Standards:    Black-formatted, PEP 8 / Flake8 compliant
 ================================================================================
 """
