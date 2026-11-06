@@ -31,18 +31,6 @@ This audit and reproducibility benchmark evaluates the exact spatial dataset pre
 > **Klandermans, B., Kamphuis, C., Taghavi, M., & Ouweltjes Wijbrand. (2026).** *Dairy Campus - Bovine Pose Estimation Dataset* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569)
 
 
-### Dataset Metadata & Roles
-| Contributor | Role in Dataset | Affiliation(s) | ORCID |
-| :--- | :--- | :--- | :--- |
-| **Klandermans, Bert** | Data Manager | Animal Breeding & Genomics ¹, Dairy Campus ² | [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422) |
-| **Kamphuis, Claudia** | Project Leader | Animal Breeding & Genomics ¹ | [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X) |
-| **Taghavi, Marjaneh** | Annotator | Animal Breeding & Genomics ¹ | [0000-0001-8386-5744](https://orcid.org/0000-0001-8386-5744) |
-| **Ouweltjes Wijbrand** | Annotator | Animal Health & Welfare ³ | [0000-0001-5455-0110](https://orcid.org/0000-0001-5455-0110) |
-
-* **Zenodo Record:** [10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569) (Concept DOI: [10.5281/zenodo.23931568](https://doi.org/10.5281/zenodo.23931568))
-* **Archive File:** `Archive.zip` (209.1 MB, `md5:1c23da9befeb16e772d6076adaf1f1c2`)
-* **License:** Creative Commons Attribution 4.0 International (CC-BY 4.0)
-* **Copyright:** © 2026 Wageningen Livestock Research
 * **Dataset Composition & Splits:**
   - **Keypoint Detection Data:** 300 annotated training images ($n = 2,371$ cows) and 20 validation images ($n = 154$ cows) across 4 barn locations (1920×1080 resolution). Purpose: Training cow detection and skeletal pose estimation / keypoint localisation models.
 
