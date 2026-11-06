@@ -34,7 +34,7 @@ This audit and reproducibility benchmark evaluates the exact spatial dataset pre
 
 > [!IMPORTANT]
 > **Dairy Campus Data & Dairy Campus Cows:**  
-> All data and cows in this dataset and audit originate directly from [Dairy Campus](https://www.dairycampus.nl) (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)) — het is de data en het zijn de koeien van Dairy Campus. The cows filmed, tracked, and annotated are the dairy cows housed at the Dairy Campus research facility, providing the authentic empirical ground truth for automated precision livestock farming and welfare monitoring.
+> All data and cows in this dataset and audit originate directly from [Dairy Campus](https://www.dairycampus.nl) (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)). The cows filmed, tracked, and annotated are the dairy cows housed at the Dairy Campus research facility, providing the authentic empirical ground truth for automated precision livestock farming and welfare monitoring.
 
 ### Dataset Metadata & Roles
 | Contributor | Role in Dataset | Affiliation(s) | ORCID |
