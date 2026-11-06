@@ -9,8 +9,6 @@
 [![PyTorch 2.1.2](https://img.shields.io/badge/PyTorch-2.1.2%2Bcu121-red.svg)](https://pytorch.org/)
 [![HPC WUR Anunna](https://img.shields.io/badge/Trained%20on-WUR%20Anunna%20HPC-orange.svg)](https://wiki.anunna.wur.nl)
 
-> **Official Facility Website:** [www.dairycampus.nl](https://www.dairycampus.nl) (Leeuwarden, the Netherlands)
-
 Code and empirical audit data for verifying the dataset lineage and scientific reproducibility of the Wageningen Livestock Research (WLR) top-down bovine pose estimation model (HRNet-W48). All video footage, annotations, and cow subjects originate directly from **[Dairy Campus](https://www.dairycampus.nl)** (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)).
 
 ---
