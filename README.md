@@ -209,14 +209,6 @@ python3 scripts/infer_cow_pose.py \
 ## Acknowledgements & Funding
 
 * **Historical Baseline:** We gratefully acknowledge **Tomás Izquierdo García-Faria** (Wageningen Livestock Research) for the initial development of the bovine pose estimation baseline configuration and historical model checkpoints at Dairy Campus.
-* **Funding Acknowledgements:**
-  - Dutch Ministry of Agriculture, Nature, and Food Quality within the framework of the 'Future Food Systems' theme (project number KB-53-000-001).
-  - Innovation Fund of [Dairy Campus](https://www.dairycampus.nl) (supported by the Regional Economic Program of Samenwerkingsverband Noord Nederland - REP-SSN).
-  - Next Level Animal Sciences (Animal Sciences Group, Wageningen UR).
-  - Noldus Information Technology (Wageningen, the Netherlands).
-  - European Union Horizon Europe Project 101136346 (EUPAHW).
-  - Agriculture of Data (AgData) consortium (grant agreement no. 101197332).
-
 ---
 
 ## Citation
