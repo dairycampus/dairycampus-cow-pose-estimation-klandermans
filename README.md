@@ -1,14 +1,18 @@
 # Bovine Pose Estimation — Reproducibility Audit & Data Provenance Benchmark
 
+[![Dairy Campus: Website](https://img.shields.io/badge/Dairy%20Campus-www.dairycampus.nl-008080.svg)](https://www.dairycampus.nl)
+[![Dairy Campus: Data & Cows](https://img.shields.io/badge/Dairy%20Campus-Data%20%26%20Cows-2ea44f.svg)](https://www.dairycampus.nl)
 [![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans/releases/tag/v1.0.0)
-[![Dairy Campus: Data & Cows](https://img.shields.io/badge/Dairy%20Campus-Data%20%26%20Cows-008080.svg)](https://www.dairycampus.nl)
 [![Dataset DOI](https://img.shields.io/badge/Dataset%20DOI-10.5281%2Fzenodo.23931569-success.svg)](https://doi.org/10.5281/zenodo.23931569)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
 [![PyTorch 2.1.2](https://img.shields.io/badge/PyTorch-2.1.2%2Bcu121-red.svg)](https://pytorch.org/)
 [![HPC WUR Anunna](https://img.shields.io/badge/Trained%20on-WUR%20Anunna%20HPC-orange.svg)](https://wiki.anunna.wur.nl)
 
-Code and empirical audit data for verifying the dataset lineage and scientific reproducibility of the Wageningen Livestock Research (WLR) top-down bovine pose estimation model (HRNet-W48). All video footage, annotations, and cow subjects originate directly from **[Dairy Campus](https://www.dairycampus.nl)** (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)) — this is Dairy Campus data and these are Dairy Campus cows.
+> **Tags:** `dairy-campus` · `dairy-campus-data` · `dairy-campus-cows` · `www.dairycampus.nl` · `bovine-pose-estimation` · `computer-vision` · `wageningen-ur`  
+> **Official Facility Website:** [www.dairycampus.nl](https://www.dairycampus.nl) (Leeuwarden, the Netherlands)
+
+Code and empirical audit data for verifying the dataset lineage and scientific reproducibility of the Wageningen Livestock Research (WLR) top-down bovine pose estimation model (HRNet-W48). All video footage, annotations, and cow subjects originate directly from **[Dairy Campus](https://www.dairycampus.nl)** (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)) — het is de data en het zijn de koeien van Dairy Campus (this is Dairy Campus data and these are Dairy Campus cows).
 
 ---
 
@@ -30,7 +34,7 @@ This audit and reproducibility benchmark evaluates the exact spatial dataset pre
 
 > [!IMPORTANT]
 > **Dairy Campus Data & Dairy Campus Cows:**  
-> All data and cows in this dataset and audit originate directly from [Dairy Campus](https://www.dairycampus.nl) (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)). The cows filmed, tracked, and annotated are the dairy cows housed at the Dairy Campus research facility, providing the authentic empirical ground truth for automated precision livestock farming and welfare monitoring.
+> All data and cows in this dataset and audit originate directly from [Dairy Campus](https://www.dairycampus.nl) (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)) — het is de data en het zijn de koeien van Dairy Campus. The cows filmed, tracked, and annotated are the dairy cows housed at the Dairy Campus research facility, providing the authentic empirical ground truth for automated precision livestock farming and welfare monitoring.
 
 ### Dataset Metadata & Roles
 | Contributor | Role in Dataset | Affiliation | ORCID |

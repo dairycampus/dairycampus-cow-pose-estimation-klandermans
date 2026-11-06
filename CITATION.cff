@@ -16,12 +16,15 @@ url: "https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans
 repository-code: "https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans"
 license: "CC-BY-4.0"
 keywords:
+  - "Dairy Campus"
+  - "Dairy Campus data"
+  - "Dairy Campus cows"
+  - "www.dairycampus.nl"
   - "data provenance"
   - "reproducibility audit"
   - "bovine pose estimation"
   - "HRNet-W48"
   - "MMPose"
-  - "Dairy Campus"
   - "deep learning"
 references:
   - type: data
