@@ -22,7 +22,6 @@ Code and empirical audit data for verifying the dataset lineage and scientific r
 **Affiliations:**  
 ¹ *Wageningen University & Research, Animal Breeding and Genomics, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands*  
 ² *Wageningen University & Research, Dairy Campus, Boksumerdyk 11, 8912 CA Leeuwarden, Fryslàn, the Netherlands*  
-³ *Wageningen University & Research, Animal Health & Welfare, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands*
 
 ---
 
@@ -49,7 +48,7 @@ This audit and reproducibility benchmark evaluates the exact spatial dataset pre
 * **License:** Creative Commons Attribution 4.0 International (CC-BY 4.0)
 * **Copyright:** © 2026 Wageningen Livestock Research
 * **Dataset Composition & Splits:**
-  - **Spatial & Keypoint Detection Data:** 300 annotated training images ($n = 2,371$ cows) and 20 validation images ($n = 154$ cows) across 4 barn locations (1920×1080 resolution). Purpose: Training cow detection and skeletal pose estimation / keypoint localisation models.
+  - **Keypoint Detection Data:** 300 annotated training images ($n = 2,371$ cows) and 20 validation images ($n = 154$ cows) across 4 barn locations (1920×1080 resolution). Purpose: Training cow detection and skeletal pose estimation / keypoint localisation models.
 
 
 ---
