@@ -52,8 +52,7 @@ This audit and reproducibility benchmark evaluates the exact spatial dataset pre
 * **Software Repository:** [https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans](https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans)
 * **Dataset Composition & Splits:**
   - **Spatial & Keypoint Detection Data:** 300 annotated training images ($n = 2,371$ cows) and 20 validation images ($n = 154$ cows) across 4 barn locations (1920×1080 resolution). Purpose: Training cow detection and skeletal pose estimation / keypoint localisation models.
-  - **Balanced Non-Transition Samples:** Additional video segments containing cows with no posture transitions across diverse postures, positions, and behaviors (standing, walking, lying, self-grooming, social grooming, aggressive/affiliative interactions), with binary label sequences set entirely to 0 to prevent severe class imbalance.
-  - **Final Action-Event Partitions:** Split at the action-event level: 360 training samples (120 per class: *other*, *lying down*, *standing up*) and 72 validation samples (24 per class).
+
 
 ---
 
@@ -177,11 +176,6 @@ Retrieve the official dataset directly from Zenodo Record [10.5281/zenodo.239315
   python3 scripts/download_dataset.py --prepare-combined
   ```
 
-* **Draft / Preview Mode (Prior to public release):**
-  Download `Archive.zip` via your authenticated browser session from [https://zenodo.org/records/23931569?preview=1](https://zenodo.org/records/23931569?preview=1) and run:
-  ```bash
-  python3 scripts/download_dataset.py --zip-file /path/to/Archive.zip --prepare-combined
-  ```
   *(Or authenticate the API using your Zenodo Personal Access Token: `python3 scripts/download_dataset.py --token <TOKEN>`)*
 
 ---
