@@ -5,11 +5,11 @@ authors:
   - family-names: Klandermans
     given-names: Bert
     orcid: "https://orcid.org/0009-0009-2173-9422"
-    affiliation: "Animal Breeding and Genomics, Wageningen Livestock Research, Wageningen University & Research, the Netherlands"
+    affiliation: "Wageningen University & Research, Animal Breeding and Genomics, Droevendaalsesteeg 1, 6708 PB, Wageningen & Dairy Campus, Boksumerdyk 11, 8912 CA Leeuwarden, the Netherlands"
   - family-names: Kamphuis
     given-names: Claudia
     orcid: "https://orcid.org/0000-0001-5552-036X"
-    affiliation: "Animal Breeding and Genomics, Wageningen Livestock Research, Wageningen University & Research, the Netherlands"
+    affiliation: "Wageningen University & Research, Animal Breeding and Genomics, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands"
 version: 1.0.0
 date-released: 2026-11-05
 url: "https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans"
@@ -33,15 +33,19 @@ references:
       - family-names: Klandermans
         given-names: Bert
         orcid: "https://orcid.org/0009-0009-2173-9422"
+        affiliation: "Wageningen University & Research, Animal Breeding and Genomics, Droevendaalsesteeg 1, 6708 PB, Wageningen & Dairy Campus, Boksumerdyk 11, 8912 CA Leeuwarden, the Netherlands"
       - family-names: Kamphuis
         given-names: Claudia
         orcid: "https://orcid.org/0000-0001-5552-036X"
+        affiliation: "Wageningen University & Research, Animal Breeding and Genomics, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands"
       - family-names: Taghavi
         given-names: Marjaneh
         orcid: "https://orcid.org/0000-0001-8386-5744"
+        affiliation: "Wageningen University & Research, Animal Breeding and Genomics, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands"
       - family-names: Ouweltjes
         given-names: Wijbrand
         orcid: "https://orcid.org/0000-0001-5455-0110"
+        affiliation: "Wageningen University & Research, Animal Health & Welfare, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands"
     year: 2026
     publisher: "Zenodo"
     doi: "10.5281/zenodo.23931569"

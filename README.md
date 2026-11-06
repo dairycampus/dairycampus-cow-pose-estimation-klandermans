@@ -12,49 +12,51 @@
 > **Tags:** `dairy-campus` · `dairy-campus-data` · `dairy-campus-cows` · `www.dairycampus.nl` · `bovine-pose-estimation` · `computer-vision` · `wageningen-ur`  
 > **Official Facility Website:** [www.dairycampus.nl](https://www.dairycampus.nl) (Leeuwarden, the Netherlands)
 
-Code and empirical audit data for verifying the dataset lineage and scientific reproducibility of the Wageningen Livestock Research (WLR) top-down bovine pose estimation model (HRNet-W48). All video footage, annotations, and cow subjects originate directly from **[Dairy Campus](https://www.dairycampus.nl)** (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)).
+Code and empirical audit data for verifying the dataset lineage and scientific reproducibility of the Wageningen Livestock Research (WLR) top-down bovine pose estimation model (HRNet-W48). All video footage, annotations, and cow subjects originate directly from **[Dairy Campus](https://www.dairycampus.nl)** (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)) — het is de data en het zijn de koeien van Dairy Campus (this is Dairy Campus data and these are Dairy Campus cows).
 
 ---
 
 ## Research Team & Attribution
-* **Klandermans, Bert** — Data Scientist & First Author 1,2  
-  ORCID: [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422)  
-  *Animal Breeding and Genomics, Wageningen Livestock Research (WUR)*
-* **Kamphuis, Claudia** — Project Lead  
-  ORCID: [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X)  1
-  *Animal Breeding and Genomics, Wageningen Livestock Research (WUR)*
+* **Klandermans, Bert** — Data Scientist & First Author ¹'²  
+  ORCID: [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422)
+* **Kamphuis, Claudia** — Project Lead ¹  
+  ORCID: [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X)
 
+**Affiliations:**  
+¹ *Wageningen University & Research, Animal Breeding and Genomics, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands*  
+² *Wageningen University & Research, Dairy Campus, Boksumerdyk 11, 8912 CA Leeuwarden, Fryslàn, the Netherlands*  
+³ *Wageningen University & Research, Animal Health & Welfare, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands*
 
-1. Wageningen University & Research, Animal Breeding and Genomics, Droevendaalsesteeg 1, 6708 PB, Wageningen, the Netherlands
-2. Wageningen University & Research, Dairy Campus, Boksumerdyk 11, 8912 CA Leeuwarden, Fryslàn, the Netherlands
 ---
 
 ## Primary Dataset Reference
 
 This audit and reproducibility benchmark evaluates the exact spatial dataset preserved in the public Dairy Campus repository:
 
-> **Klandermans, B., Kamphuis, C., Taghavi, M., & Ouweltjes, W. (2026).** *Dairy Campus - Bovine Pose Estimation Dataset* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569)
+> **Klandermans, B., Kamphuis, C., Taghavi, M., & Ouweltjes Wijbrand. (2026).** *Dairy Campus - Bovine Pose Estimation Dataset* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569)
 
 > [!IMPORTANT]
 > **Dairy Campus Data & Dairy Campus Cows:**  
 > All data and cows in this dataset and audit originate directly from [Dairy Campus](https://www.dairycampus.nl) (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)) — het is de data en het zijn de koeien van Dairy Campus. The cows filmed, tracked, and annotated are the dairy cows housed at the Dairy Campus research facility, providing the authentic empirical ground truth for automated precision livestock farming and welfare monitoring.
 
 ### Dataset Metadata & Roles
-| Contributor | Role in Dataset | Affiliation | ORCID |
+| Contributor | Role in Dataset | Affiliation(s) | ORCID |
 | :--- | :--- | :--- | :--- |
-| **Klandermans, Bert** | Data Manager | Wageningen Livestock Research (WUR) | [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422) |
-| **Taghavi, Marjaneh** | Annotator | Wageningen Livestock Research (WUR) | [0000-0001-8386-5744](https://orcid.org/0000-0001-8386-5744) |
-| **Ouweltjes, Wijbrand** | Annotator | Wageningen Livestock Research (WUR) | [0000-0001-5455-0110](https://orcid.org/0000-0001-5455-0110) |
-| **Kamphuis, Claudia** | Project Leader | Wageningen Livestock Research (WUR) | [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X) |
+| **Klandermans, Bert** | Data Manager | Animal Breeding & Genomics ¹, Dairy Campus ² | [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422) |
+| **Kamphuis, Claudia** | Project Leader | Animal Breeding & Genomics ¹ | [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X) |
+| **Taghavi, Marjaneh** | Annotator | Animal Breeding & Genomics ¹ | [0000-0001-8386-5744](https://orcid.org/0000-0001-8386-5744) |
+| **Ouweltjes Wijbrand** | Annotator | Animal Health & Welfare ³ | [0000-0001-5455-0110](https://orcid.org/0000-0001-5455-0110) |
 
 * **Zenodo Record:** [10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569) (Concept DOI: [10.5281/zenodo.23931568](https://doi.org/10.5281/zenodo.23931568))
-* **Archive File:** `Archive.zip` (209 MB)
+* **Archive File:** `Archive.zip` (209.1 MB, `md5:1c23da9befeb16e772d6076adaf1f1c2`)
 * **License:** Creative Commons Attribution 4.0 International (CC-BY 4.0)
 * **Copyright:** © 2026 Wageningen Livestock Research
 * **WUR Institutional Record:** [https://edepot.wur.nl/654349](https://edepot.wur.nl/654349)
-* **Dataset Scope:**
-  - **Spatial Keypoint Detection:** 300 annotated training images (2,371 cow instances) and 20 validation images (154 cow instances) across 4 barn locations (1920×1080 resolution).
-  - **Temporal Action Recognition:** 504 transition events (lying down, standing up, other) with event-boundary annotations for behavioral monitoring.
+* **Software Repository:** [https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans](https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans)
+* **Dataset Composition & Splits:**
+  - **Spatial & Keypoint Detection Data:** 300 annotated training images ($n = 2,371$ cows) and 20 validation images ($n = 154$ cows) across 4 barn locations (1920×1080 resolution). Purpose: Training cow detection and skeletal pose estimation / keypoint localisation models.
+  - **Balanced Non-Transition Samples:** Additional video segments containing cows with no posture transitions across diverse postures, positions, and behaviors (standing, walking, lying, self-grooming, social grooming, aggressive/affiliative interactions), with binary label sequences set entirely to 0 to prevent severe class imbalance.
+  - **Final Action-Event Partitions:** Split at the action-event level: 360 training samples (120 per class: *other*, *lying down*, *standing up*) and 72 validation samples (24 per class).
 
 ---
 
@@ -69,7 +71,7 @@ The investigation tests this through a three-stage empirical audit:
 ---
 
 ## Dataset & Technical Setup
-The model detects 4 anatomical keypoints (`0: left_ear`, `1: right_ear`, `2: withers`, `3: tail_base`) on 1920×1080 top-view barn surveillance cameras at **[Dairy Campus](https://www.dairycampus.nl)** (Leeuwarden, the Netherlands; [www.dairycampus.nl](https://www.dairycampus.nl)). All imagery captures resident Dairy Campus cows across 4 barn locations.
+The model detects 4 anatomical keypoints (`0: left_ear`, `1: right_ear`, `2: withers`, `3: tail_base`) on 1920×1080 top-view barn surveillance cameras at Dairy Campus (Leeuwarden, the Netherlands).
 
 * **Training split:** 300 images (2,371 cow instances)
 * **Validation split:** 20 images (154 cow instances)
@@ -137,6 +139,8 @@ The model detects 4 anatomical keypoints (`0: left_ear`, `1: right_ear`, `2: wit
 ├── assets/
 │   ├── sample_images/                               # Top-view validation samples (barn locations 1–3)
 │   └── plots/                                       # Generated high-resolution publication figures
+├── notebooks/
+│   └── bovine_pose_verification_and_audit.ipynb     # Interactive testing & provenance validation notebook
 ├── requirements.txt                                 # Core Python dependencies
 └── CITATION.cff                                     # Machine-readable citation metadata
 ```
@@ -234,7 +238,7 @@ python3 scripts/infer_cow_pose.py \
 ### 2. Dairy Campus Pose Estimation Dataset
 ```bibtex
 @dataset{klandermans2026dataset,
-  author       = {Klandermans, Bert and Kamphuis, Claudia and Taghavi, Marjaneh and Ouweltjes, Wijbrand},
+  author       = {Klandermans, Bert and Kamphuis, Claudia and Taghavi, Marjaneh and {Ouweltjes Wijbrand}},
   title        = {{Dairy Campus - Bovine Pose Estimation Dataset}},
   year         = {2026},
   publisher    = {Zenodo},
