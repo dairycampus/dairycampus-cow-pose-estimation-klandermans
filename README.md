@@ -13,7 +13,7 @@ Code and empirical audit data for verifying the dataset lineage and scientific r
 ---
 
 ## Research Team & Attribution
-* **Klandermans, Bert** — Lead Researcher & First Author  
+* **Klandermans, Bert** — Data Scientist & First Author  
   ORCID: [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422)  
   *Animal Breeding and Genomics, Wageningen Livestock Research (WUR)*
 * **Kamphuis, Claudia** — Project Lead  
@@ -32,9 +32,9 @@ This audit and reproducibility benchmark evaluates the exact spatial dataset pre
 | Contributor | Role in Dataset | Affiliation | ORCID |
 | :--- | :--- | :--- | :--- |
 | **Klandermans, Bert** | Data Manager | Wageningen Livestock Research (WUR) | [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422) |
-| **Kamphuis, Claudia** | Project Leader | Wageningen Livestock Research (WUR) | [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X) |
 | **Taghavi, Marjaneh** | Annotator | Wageningen Livestock Research (WUR) | [0000-0001-8386-5744](https://orcid.org/0000-0001-8386-5744) |
 | **Ouweltjes, Wijbrand** | Annotator | Wageningen Livestock Research (WUR) | [0000-0001-5455-0110](https://orcid.org/0000-0001-5455-0110) |
+| **Kamphuis, Claudia** | Project Leader | Wageningen Livestock Research (WUR) | [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X) |
 
 * **Zenodo Record:** [10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569) (Concept DOI: [10.5281/zenodo.23931568](https://doi.org/10.5281/zenodo.23931568))
 * **Archive File:** `Archive.zip` (209 MB)
