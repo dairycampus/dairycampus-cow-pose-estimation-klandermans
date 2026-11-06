@@ -11,9 +11,13 @@ Code and empirical audit data for verifying the dataset lineage and scientific r
 
 ---
 
-## Author & Research Attribution
-**Bert Klandermans** — ORCID: [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422)  
-*Animal Breeding and Genomics, Wageningen Livestock Research (WUR)*
+## Research Team & Attribution
+* **Bert Klandermans** — Lead Researcher & First Author  
+  ORCID: [0009-0009-2173-9422](https://orcid.org/0009-0009-2173-9422)  
+  *Animal Breeding and Genomics, Wageningen Livestock Research (WUR)*
+* **Dr. Claudia Kamphuis** — Project Lead  
+  ORCID: [0000-0001-5552-036X](https://orcid.org/0000-0001-5552-036X)  
+  *Animal Breeding and Genomics, Wageningen Livestock Research (WUR)*
 
 ---
 
@@ -157,7 +161,7 @@ python3 scripts/infer_cow_pose.py \
 ## Citation
 ```bibtex
 @software{klandermans2026provenance,
-  author       = {Klandermans, Bert},
+  author       = {Klandermans, Bert and Kamphuis, Claudia},
   title        = {{Bovine Pose Estimation — Reproducibility Audit & Data Provenance Benchmark}},
   year         = {2026},
   publisher    = {GitHub},

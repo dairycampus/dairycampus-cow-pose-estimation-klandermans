@@ -6,6 +6,10 @@ authors:
     given-names: Bert
     orcid: "https://orcid.org/0009-0009-2173-9422"
     affiliation: "Animal Breeding and Genomics, Wageningen Livestock Research, Wageningen University & Research, the Netherlands"
+  - family-names: Kamphuis
+    given-names: Claudia
+    orcid: "https://orcid.org/0000-0001-5552-036X"
+    affiliation: "Animal Breeding and Genomics, Wageningen Livestock Research, Wageningen University & Research, the Netherlands"
 version: 1.0.0
 doi: "10.5281/zenodo.23931569"
 date-released: 2026-11-05
@@ -33,6 +37,9 @@ preferred-citation:
     - family-names: Klandermans
       given-names: Bert
       orcid: "https://orcid.org/0009-0009-2173-9422"
+    - family-names: Kamphuis
+      given-names: Claudia
+      orcid: "https://orcid.org/0000-0001-5552-036X"
   title: "Bovine Pose Estimation — Reproducibility Audit & Data Provenance Benchmark"
   year: 2026
   url: "https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans"
