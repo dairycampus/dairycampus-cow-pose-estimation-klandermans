@@ -30,7 +30,7 @@ Code and empirical audit data for verifying the dataset lineage and scientific r
 
 This audit and reproducibility benchmark evaluates the exact spatial dataset preserved in the public Dairy Campus repository:
 
-> **Klandermans, B., Kamphuis, C., Taghavi, M., & Ouweltjes Wijbrand. (2026).** *Dairy Campus - Bovine Pose Estimation Dataset* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569)
+> **Klandermans, B., Kamphuis, C., Taghavi, M., & Ouweltjes W. (2026).** *Dairy Campus - Bovine Pose Estimation Dataset* [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.23931569](https://doi.org/10.5281/zenodo.23931569)
 
 > [!IMPORTANT]
 > **Dairy Campus Data & Dairy Campus Cows:**  
