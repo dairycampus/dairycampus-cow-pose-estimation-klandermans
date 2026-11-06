@@ -48,8 +48,6 @@ This audit and reproducibility benchmark evaluates the exact spatial dataset pre
 * **Archive File:** `Archive.zip` (209.1 MB, `md5:1c23da9befeb16e772d6076adaf1f1c2`)
 * **License:** Creative Commons Attribution 4.0 International (CC-BY 4.0)
 * **Copyright:** © 2026 Wageningen Livestock Research
-* **WUR Institutional Record:** [https://edepot.wur.nl/654349](https://edepot.wur.nl/654349)
-* **Software Repository:** [https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans](https://github.com/dairycampus/dairycampus-cow-pose-estimation-klandermans)
 * **Dataset Composition & Splits:**
   - **Spatial & Keypoint Detection Data:** 300 annotated training images ($n = 2,371$ cows) and 20 validation images ($n = 154$ cows) across 4 barn locations (1920×1080 resolution). Purpose: Training cow detection and skeletal pose estimation / keypoint localisation models.
 
