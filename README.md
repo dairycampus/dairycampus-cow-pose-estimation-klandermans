@@ -15,7 +15,7 @@ Code and empirical audit data for verifying the dataset lineage and scientific r
 
 ## Research Team & Attribution
 * **[Klandermans, Bert](https://orcid.org/0009-0009-2173-9422)** — Data Scientist & First Author ¹'²  
-* **[Kamphuis, Claudia](https://orcid.org/0000-0001-5552-036X)** — Project Lead ¹  
+
 
 
 **Affiliations:**  
